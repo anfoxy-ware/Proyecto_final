@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Preseleccionar Materias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <section *ngIf="materias.length > 0; else noMaterias">
+    <div class="materias-container">
+      <div class="materia" *ngFor="let materia of materias">
+        <div class="card">
+          <div class="card-header">
+            <h2>{{ materia.nombre }}</h2>
+          </div>
+          <div class="card-content">
+            <p>{{ materia.horario }}</p>
+            <p>{{ materia.aula }}</p>
+            <ion-button color="primary" (click)="preseleccionarMateria(materia.codigo)">
+              Preseleccionar
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ng-template #noMaterias>
+    <div class="no-materias">
+      <h4>No hay materias disponibles para mostrar.</h4>
+    </div>
+  </ng-template>
+
+  <ion-toast *ngIf="toastMessage" [message]="toastMessage" duration="2000"></ion-toast>
+</ion-content>

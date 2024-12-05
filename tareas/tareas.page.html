@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+<ion-buttons slot="start">
+ <ion-menu-button></ion-menu-button>
+</ion-buttons>
+    <ion-title>Mis Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tareas Pendientes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let tarea of tareasPendientes">
+          <ion-label>
+            <h2>{{ tarea.titulo }}</h2>
+            <p>{{ tarea.descripcion }}</p>
+            <p><strong>Fecha de Vencimiento:</strong> {{ tarea.fechaVencimiento | date:'medium' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tareas Completadas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let tarea of tareasCompletadas">
+          <ion-label>
+            <h2>{{ tarea.titulo }}</h2>
+            <p>{{ tarea.descripcion }}</p>
+            <p><strong>Completada el:</strong> {{ tarea.fechaVencimiento | date:'medium' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" (click)="abrirAulaVirtual()">Ir al Aula Virtual</ion-button>
+
+  <ion-toast
+    *ngIf="mensajeToast"
+    [message]="mensajeToast"
+    [duration]="3000"
+    (ionToastDidDismiss)="mensajeToast = null"
+  ></ion-toast>
+</ion-content>

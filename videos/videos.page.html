@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+ <ion-menu-button></ion-menu-button>
+</ion-buttons>
+    <ion-title>Videos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Lista de videos -->
+  <ion-list *ngIf="!videoSeleccionado">
+    <ion-item *ngFor="let video of videos" (click)="reproducirVideo(video)">
+      <ion-label>
+        <h2>{{ video.titulo }}</h2>
+        <p>Publicado: {{ video.fechaPublicacion | date: 'medium' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Reproductor de video -->
+  <div *ngIf="videoSeleccionado" class="video-container">
+    <h2>{{ videoSeleccionado.titulo }}</h2>
+    <iframe
+      [src]="videoSeleccionado.url"
+      width="100%"
+      height="315"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+    <ion-button expand="block" color="secondary" (click)="cerrarVideo()">Volver</ion-button>
+  </div>
+</ion-content>

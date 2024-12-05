@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Noticias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<main class="content" *ngIf="loading">
+  <div class="loading-container">
+    <div class="spinner"></div>
+    <p>Cargando noticias...</p>
+  </div>
+</main>
+
+<ion-content class="content" *ngIf="!loading && !error">
+  <section *ngIf="noticias.length > 0; else noNoticias">
+    <div class="noticias-container"> <!-- Aquí se aplica la clase noticias-container -->
+      <div class="noticia" *ngFor="let noticia of noticias">
+        <div class="card">
+          <img [src]="noticia.img" *ngIf="noticia.img" alt="Imagen de la noticia" />
+          <div class="card-header">
+            <h2>{{ noticia.title }}</h2>
+          </div>
+          <div class="card-content">
+            <p>{{ noticia.date }}</p>
+            <p>{{ noticia.description }}</p>
+            <a href="{{ noticia.url }}" target="_blank" class="read-more">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ng-template #noNoticias>
+    <div class="no-news">
+      <h2>No hay noticias disponibles</h2>
+    </div>
+  </ng-template>
+</ion-content>
+
+<main class="content" *ngIf="error">
+  <p class="error-message">{{ error }}</p>
+</main>

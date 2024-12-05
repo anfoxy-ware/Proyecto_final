@@ -1,0 +1,94 @@
+/* Asegura que toda la pantalla tenga fondo blanco */
+.content {
+  background-color: white;
+}
+
+body, ion-content {
+  background-color: #ffffff; /* Fondo blanco */
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal de las materias */
+.materias-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: #ffffff; /* Fondo blanco */
+  box-shadow: 0 4px 10px rgba(0, 38, 255, 0.6); /* Sombra más grande y oscura */
+  border-radius: 8px; /* Bordes redondeados */
+  margin-top: 20px; /* Añadido margen superior para que no quede pegado al borde superior */
+  margin-bottom: 20px; /* Añadido margen inferior */
+  flex-grow: 1; /* Para que ocupe el espacio disponible */
+}
+
+/* Estilo de cada materia */
+.materia {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9; /* Fondo gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.materia h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000000; /* Títulos negros */
+  margin-bottom: 8px;
+}
+
+.materia p {
+  font-size: 0.9rem;
+  color: #666666; /* Texto gris */
+  margin-bottom: 8px;
+}
+
+.materia ion-button {
+  background-color: #007bff; /* Botón azul */
+  color: white;
+  border-radius: 5px;
+  padding: 8px 12px;
+}
+
+.materia ion-button:hover {
+  background-color: #0056b3; /* Botón azul más oscuro al pasar el mouse */
+}
+
+/* Mensaje cuando no hay materias disponibles */
+.no-materias {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Asegurar que los elementos dentro de ion-content no se corten */
+ion-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+}
+
+/* Contenedor de carga */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Hace que ocupe el resto del espacio */
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

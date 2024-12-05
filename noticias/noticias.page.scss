@@ -1,0 +1,76 @@
+.content {
+    background-color: white;
+}
+
+.noticias-container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 10px rgba(0, 38, 255, 0.6); /* Sombra más grande y oscura */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.noticia {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9; /* Fondo gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.noticia h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000; /* Títulos negros */
+    margin-bottom: 8px;
+}
+
+.noticia p {
+    font-size: 0.9rem;
+    color: #666666; /* Texto gris */
+    margin-bottom: 8px;
+}
+
+.noticia img {
+    width: 100%; /* Imagen ocupa el ancho del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 8px; /* Separación con el texto */
+}
+
+.noticia a {
+    color: #007bff; /* Enlaces en azul */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;
+}
+
+.noticia a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+.loading-container {
+    text-align: center;
+}
+
+.spinner {
+    width: 50px; /* Tamaño del spinner */
+    height: 50px;
+    margin: 0 auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.no-news {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+}
