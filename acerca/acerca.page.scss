@@ -1,0 +1,59 @@
+ion-content {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    height: 100%;            /* Asegura que ocupe toda la pantalla */
+    flex-direction: column;  /* Alinea los botones uno debajo del otro */
+  }
+    
+  ion-header {
+      background-color: rgb(255, 255, 255);
+      box-shadow: 0 60px 60px rgba(14, 12, 12, 0.466);
+      padding: 0; /* Elimina padding */
+      margin: 0; /* Elimina margen */
+  }
+  
+  
+  .header-image {
+      width: 80%;
+      margin: 0 auto; /* Centra la imagen horizontalmente */
+      display: block; /* Asegura comportamiento de bloque */
+  }
+  
+  .contact-card {
+    text-align: center;
+  }
+ 
+  .profile-img {
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+ 
+  h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #ffffff;
+  }
+ 
+  p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+ 
+  ion-item {
+    margin-top: 10px;
+  }
+ 
+  ion-text a {
+    color: #007bff;
+    text-decoration: none;
+  }
+ 
+  ion-text a:hover {
+    text-decoration: underline;
+  }

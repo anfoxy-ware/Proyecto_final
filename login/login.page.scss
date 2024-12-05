@@ -1,0 +1,102 @@
+/* Estilos generales para el body */
+.es01 {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Para que los elementos hijos puedan usar posicionamiento absoluto */
+}
+.imag {
+    text-align: center;
+    margin: auto;
+  }
+
+/* Posicionamiento del botón "Regresar" */
+.btn-back {
+    position: absolute; /* Permite colocar el botón en una posición específica dentro del contenedor */
+    top: 10px; /* Distancia desde el borde superior */
+    left: 10px; /* Distancia desde el borde izquierdo */
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Efecto hover para el botón */
+.btn-back:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Estilo para la imagen o contenido centrado */
+.imag {
+    text-align: center;
+    margin: auto;
+}
+
+/* Otros estilos */
+.parrafo {
+    padding: 50px;
+    font-size: 15px;
+    color: black;
+}
+
+.login {
+    border-radius: 8px;
+    text-align: center;
+    padding: 5%;
+    margin-top: auto;
+    margin-bottom: 80%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-login {
+    background-color: rgba(13, 77, 161, 0);
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    padding: 12px 45px;
+    font-size: 18px;
+    margin-right: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn-regis {
+    background-color: rgba(13, 76, 161, 1);
+    color: white;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 18px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.btn-regis:hover {
+    background-color: rgb(13, 94, 161);
+}

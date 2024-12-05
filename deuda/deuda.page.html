@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Estado de Deuda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <section *ngIf="deudas.length > 0; else noDeudas">
+    <div class="deudas-container">
+      <div class="deuda" *ngFor="let deuda of deudas">
+        <div class="card">
+          <div class="card-header">
+            <h2>Deuda: {{ deuda.monto | currency }}</h2>
+          </div>
+          <div class="card-content">
+            <p>Fecha de actualización: {{ deuda.fechaActualizacion | date }}</p>
+            <ion-button color="primary" (click)="redirectToPayment()">
+              Pagar
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ng-template #noDeudas>
+    <div class="no-deudas">
+      <h4>No tienes deudas pendientes.</h4>
+    </div>
+  </ng-template>
+</ion-content>

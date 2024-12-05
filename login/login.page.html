@@ -1,0 +1,47 @@
+
+<div class="es01">
+  <button (click)="Gotologin()" class="btn-back" style="background-color: white; color: black;">Regresar</button>
+  <div class="imag">
+  </div>
+
+  <div class="login">
+    <img  src="assets\imagenes\UASD.png" alt="Descripción de la imagen">
+    <h1 style="color: black;">Iniciar sesión</h1>
+    <form (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          [(ngModel)]="username" 
+          name="username" 
+          required 
+          class="form-control" 
+          placeholder="Ingresa tu usuario"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="password" 
+          name="password" 
+          required 
+          class="form-control" 
+          placeholder="Ingresa tu contraseña"
+        />
+      </div>
+      <button type="submit" class="btn-login">Iniciar sesión</button>
+    </form>
+    <button 
+      class="btn-regis" 
+      routerLink="/signup">
+      Estudia con Nosotros
+    </button>
+    <div>    <i style="color: blue;" (click)="navigateToRecoverPassword()">¿Olvidaste tu contraseña?</i>
+    </div>
+
+  </div>
+</div>

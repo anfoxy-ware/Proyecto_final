@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Horarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+  <section *ngIf="horarios.length > 0; else noData">
+    <div class="horarios-container">
+      <div class="horario" *ngFor="let horario of horarios">
+        <div class="card">
+          <div class="card-header">
+            <h2>Materia: {{ horario.materia }}</h2>
+          </div>
+          <div class="card-content">
+            <p>Aula: {{ horario.aula }}</p>
+            <p>Fecha y hora: {{ horario.fechaHora | date: 'short' }}</p>
+            <p>Ubicación: {{ horario.ubicacion }}</p>
+            <ion-button color="primary" (click)="verEnMapa(horario.ubicacion, horario.materia, horario.aula)">
+              Ver en mapa
+            </ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ng-template #noData>
+    <div class="no-data">
+      <h4>No hay horarios disponibles.</h4>
+    </div>
+  </ng-template>
+</ion-content>

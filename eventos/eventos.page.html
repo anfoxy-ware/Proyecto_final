@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Eventos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<main class="content">
+  <!-- Lista de eventos -->
+  <div class="event-list" *ngIf="!eventoSeleccionado">
+    <div class="event-item" *ngFor="let evento of eventos" onclick="mostrarDetalles(evento)">
+      <div class="event-label">
+        <h2>{{ evento.titulo }}</h2>
+        <p>{{ evento.fechaEvento | date:'medium' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detalles del evento -->
+  <div class="event-card" *ngIf="eventoSeleccionado">
+    <div class="event-card-header">
+      <h2>{{ eventoSeleccionado.titulo }}</h2>
+    </div>
+    <div class="event-card-content">
+      <p><strong>Descripción:</strong> {{ eventoSeleccionado.descripcion }}</p>
+      <p><strong>Fecha:</strong> {{ eventoSeleccionado.fechaEvento | date:'medium' }}</p>
+      <p><strong>Lugar:</strong> {{ eventoSeleccionado.lugar }}</p>
+      <button class="back-button" onclick="cerrarDetalles()">Volver</button>
+    </div>
+  </div>
+</main>
